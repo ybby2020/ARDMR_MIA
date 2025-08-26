@@ -207,9 +207,9 @@ class UpConvBlock(nn.Module):
         x = self.upconv(x)
         return self.actout(x)
 
-class CrossReg(nn.Module):
+class DMR(nn.Module):
     def __init__(self, inchannel, statechannel=8, vol_shape=[64, 160, 192]):
-        super(CrossReg, self).__init__()
+        super(DMR, self).__init__()
         self.encoder_moving = Encoder(in_channel=inchannel, first_out_channel=statechannel)
         self.encoder_fixed = Encoder(in_channel=inchannel, first_out_channel=statechannel)
         # self.encoder_fixed = Encoder(in_channel=inchannel, first_out_channel=statechannel)

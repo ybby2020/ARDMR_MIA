@@ -7,7 +7,7 @@ from torchvision import transforms
 from evaluation import evaluation as mt
 
 
-from model.multiRDP2 import CrossReg
+from model.ARDMR import DMR
 def main():
     test_dir = '' #dataset path
     # model_idx = -1
@@ -15,7 +15,7 @@ def main():
     model_folder = 'multi_{}_diffusion_{}/'.format(weights[0], weights[1])
     model_dir = 'experiments/' + model_folder
     img_size = (64, 160, 160)
-    model = CrossReg(inchannel=1, statechannel=8, vol_shape=img_size)
+    model = DMR(inchannel=1, statechannel=8, vol_shape=img_size)
     model.cuda()
 
     test_epoch = 'latest'
